@@ -1,5 +1,5 @@
 const request = require('supertest');
-const app = require('./server'); // Importar la instancia de la aplicación
+const app = require('./server'); 
 
 jest.mock('axios');
 const axios = require('axios');

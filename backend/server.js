@@ -47,6 +47,12 @@ app.get('/api/posts/:id/comments', async (req, res) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`Servidor corriendo en http://localhost:${port}`);
-});
+// Exportar la instancia de la aplicación para pruebas
+module.exports = app;
+
+// Solo iniciar el servidor si no está en un entorno de prueba
+if (require.main === module) {
+  app.listen(port, () => {
+    console.log(`Servidor corriendo en http://localhost:${port}`);
+  });
+}
