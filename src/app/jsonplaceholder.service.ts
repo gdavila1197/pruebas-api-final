@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class JsonPlaceholderService {
-  private baseURL = 'https://jsonplaceholder.typicode.com';
+  private baseURL = 'http://localhost:3000/api'; 
 
   constructor(private http: HttpClient) {}
 
