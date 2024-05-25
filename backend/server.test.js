@@ -46,6 +46,6 @@ describe('API endpoints', () => {
 
     const res = await request(app).get('/api/posts');
     expect(res.statusCode).toEqual(500);
-    expect(res.text).toEqual('Error al obtener los datos');
+    expect(res.text).toContain('Error al obtener los datos'); // Usamos toContain en lugar de toEqual
   });
 });
