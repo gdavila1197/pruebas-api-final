@@ -4,7 +4,7 @@ const cors = require('cors'); // Importar cors
 const app = express();
 const port = 3000;
 
-app.use(cors()); // Habilitar CORS para todas las rutas
+app.use(cors()); 
 app.use(express.json());
 
 app.get('/', (req, res) => {

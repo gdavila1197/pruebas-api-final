@@ -1,13 +1,8 @@
 const request = require('supertest');
-const express = require('express');
-const axios = require('axios');
-const app = express();
+const app = require('./server'); // Importar la instancia de la aplicación
 
 jest.mock('axios');
-
-app.use(express.json());
-
-app.use('/', require('./server'));
+const axios = require('axios');
 
 describe('API Endpoints', () => {
   it('should fetch posts', async () => {
@@ -26,5 +21,23 @@ describe('API Endpoints', () => {
     const res = await request(app).get('/api/posts/1');
     expect(res.statusCode).toEqual(200);
     expect(res.body).toEqual(post);
+  });
+
+  it('should fetch comments', async () => {
+    const comments = [{ id: 1, body: 'Comment 1' }];
+    axios.get.mockResolvedValue({ data: comments });
+
+    const res = await request(app).get('/api/comments');
+    expect(res.statusCode).toEqual(200);
+    expect(res.body).toEqual(comments);
+  });
+
+  it('should fetch comments for a specific post', async () => {
+    const comments = [{ id: 1, body: 'Comment 1' }];
+    axios.get.mockResolvedValue({ data: comments });
+
+    const res = await request(app).get('/api/posts/1/comments');
+    expect(res.statusCode).toEqual(200);
+    expect(res.body).toEqual(comments);
   });
 });

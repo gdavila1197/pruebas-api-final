@@ -13,8 +13,9 @@
     "axios": "^1.7.2",
     "cors": "^2.8.5",
     "express": "^4.19.2"
-  },"devDependencies": {
+  },
+  "devDependencies": {
     "jest": "^29.7.0",
-    "supertest": "^6.2.3"
+    "supertest": "^6.3.4"
   }
 }
