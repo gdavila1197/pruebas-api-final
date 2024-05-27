@@ -42,10 +42,10 @@ describe('API endpoints', () => {
   });
 
   it('debería manejar errores correctamente', async () => {
-    axios.get.mockRejectedValue(new Error('Error'));
+    axios.get.mockRejectedValue(new Error('Error al tener los datos.'));
 
     const res = await request(app).get('/api/posts');
     expect(res.statusCode).toEqual(500);
-    expect(res.text).toContain('Error'); 
+    expect(res.text).toContain('Error al tener los datos.'); 
   });
 });
