@@ -4,16 +4,17 @@ module.exports = function(config) {
     frameworks: ['jasmine', '@angular-devkit/build-angular'],
     plugins: [
       require('karma-jasmine'),
-      require('karma-safari-launcher'), // Añadir el lanzador de Safari aquí
+      //require('karma-safari-launcher'), 
+      require('karma-chrome-launcher'),
       require('karma-jasmine-html-reporter'),
       require('karma-coverage-istanbul-reporter'),
       require('@angular-devkit/build-angular/plugins/karma')
     ],
     client: {
-      clearContext: false // leave Jasmine Spec Runner output visible in browser
+      clearContext: false 
     },
     jasmineHtmlReporter: {
-      suppressAll: true // removes the duplicated traces
+      suppressAll: true 
     },
     coverageIstanbulReporter: {
       dir: require('path').join(__dirname, './coverage/my-app'),
@@ -25,7 +26,7 @@ module.exports = function(config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Safari'], // Cambia a Safari
+    browsers: ['ChromeHeadless'], 
     singleRun: false,
     restartOnFileChange: true
   });
