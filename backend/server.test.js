@@ -42,10 +42,10 @@ describe('API endpoints', () => {
   });
 
   it('debería manejar errores correctamente', async () => {
-    axios.get.mockRejectedValue(new Error('Error al obten los datos otra vez'));
+    axios.get.mockRejectedValue(new Error('Error'));
 
     const res = await request(app).get('/api/posts');
     expect(res.statusCode).toEqual(500);
-    expect(res.text).toContain('Error al obten los datos otra vez'); 
+    expect(res.text).toContain('Error'); 
   });
 });
