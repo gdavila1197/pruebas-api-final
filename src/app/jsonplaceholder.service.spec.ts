@@ -31,7 +31,7 @@ describe('JsonPlaceholderService', () => {
 
     const request = httpMock.expectOne(`${service['baseURL']}/posts`);
     expect(request.request.method).toBe('GET');
-    request.flush(dummyPosts);
+    request.flush([]);
   });
 
   it('Obtener un post por id específico', () => {
