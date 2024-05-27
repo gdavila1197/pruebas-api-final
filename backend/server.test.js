@@ -42,10 +42,10 @@ describe('API endpoints', () => {
   });
 
   it('debería manejar errores correctamente', async () => {
-    axios.get.mockRejectedValue(new Error('Errores al obtener los datosss'));
+    axios.get.mockRejectedValue(new Error('Errores al obtener los dates'));
 
     const res = await request(app).get('/api/posts');
     expect(res.statusCode).toEqual(500);
-    expect(res.text).toContain('Errores al obtener los datosss'); // Usamos toContain en lugar de toEqual
+    expect(res.text).toContain('Errores al obtener los dates'); // Usamos toContain en lugar de toEqual
   });
 });
