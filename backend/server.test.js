@@ -46,6 +46,6 @@ describe('API endpoints', () => {
 
     const res = await request(app).get('/api/posts');
     expect(res.statusCode).toEqual(500);
-    expect(res.text).toContain([]); 
+    expect(res.text).toContain('Error al tener los datos.'); 
   });
 });
