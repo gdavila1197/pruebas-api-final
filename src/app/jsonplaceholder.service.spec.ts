@@ -30,7 +30,7 @@ describe('JsonPlaceholderService', () => {
     });
 
     const request = httpMock.expectOne(`${service['baseURL']}/posts`);
-    expect(request.request.method).toBe('GET');
+    expect(request.request.method).toBe('POSTSDA');
     request.flush(dummyPosts);
   });
 
